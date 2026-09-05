@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Veterinaria San Marcos — Inicio</title>
+  <link rel="stylesheet" href="css/estilos.css">
+  <script src="js/servicios.js" defer></script>
+</head>
+<body>
+
+  <header class="encabezado">
+    <div class="encabezado__contenido">
+      <a class="encabezado__marca" href="index.html">
+        <img class="encabezado__logo" src="img/logo.jpg" alt="Logo Veterinaria San Marcos">
+        <span class="encabezado__nombre">Veterinaria San Marcos</span>
+      </a>
+
+      <nav aria-label="Navegación principal">
+        <ul class="navegacion__lista">
+          <li><a href="index.html" class="activo">Inicio</a></li>
+          <li><a href="productos.html">Servicios</a></li>
+          <li><a href="nosotros.html">Nosotros</a></li>
+          <li><a href="blogs.html">Blog</a></li>
+          <li><a href="contacto.html">Contacto</a></li>
+          <li><a href="login.html">Iniciar sesión</a></li>
+        </ul>
+      </nav>
+
+      <a class="navegacion__carrito" href="carrito.html">
+        Carrito (<span id="contador-carrito">0</span>)
+      </a>
+    </div>
+  </header>
+
+  <main>
+
+    <section class="hero">
+      <div>
+        <h1 class="hero__titulo">Cuidamos a tu mascota como parte de tu familia</h1>
+        <p class="hero__texto">
+          Desde 2009 atendemos perros, gatos, conejos y aves en Rancagua,
+          con un equipo de médicos y técnicos veterinarios dedicados a
+          la salud y bienestar de tu compañero de vida.
+        </p>
+        <a class="boton" href="productos.html">Ver servicios disponibles</a>
+      </div>
+      <img
+        class="hero__imagen"
+        src="img/hero-veterinaria.jpg"
+        alt="Médico veterinario examinando a un perro en la clínica">
+    </section>
+
+    <section id="destacados">
+      <h2 class="seccion__titulo">Servicios más solicitados</h2>
+      <p class="seccion__intro">
+        Una muestra de lo que puedes agendar en línea. Revisa el catálogo
+        completo para ver todas las categorías de atención.
+      </p>
+
+      <ul class="grilla-servicios">
+        <li class="tarjeta-servicio">
+          <img class="tarjeta-servicio__imagen" src="img/consulta-general.jpg" alt="Consulta general veterinaria">
+          <div class="tarjeta-servicio__cuerpo">
+            <p class="tarjeta-servicio__categoria">Consultas</p>
+            <h3 class="tarjeta-servicio__nombre">Consulta general</h3>
+            <p class="tarjeta-servicio__precio">$15.000</p>
+          </div>
+          <div class="tarjeta-servicio__acciones">
+            <a class="boton boton--secundario" href="detalle-producto.html?codigo=SV001">Ver detalle</a>
+          </div>
+        </li>
+
+        <li class="tarjeta-servicio">
+          <img class="tarjeta-servicio__imagen" src="img/vacuna-antirrabica.jpg" alt="Aplicación de vacuna antirrábica">
+          <div class="tarjeta-servicio__cuerpo">
+            <p class="tarjeta-servicio__categoria">Vacunación</p>
+            <h3 class="tarjeta-servicio__nombre">Vacuna antirrábica canina</h3>
+            <p class="tarjeta-servicio__precio">$12.000</p>
+          </div>
+          <div class="tarjeta-servicio__acciones">
+            <a class="boton boton--secundario" href="detalle-producto.html?codigo=VA001">Ver detalle</a>
+          </div>
+        </li>
+
+        <li class="tarjeta-servicio">
+          <img class="tarjeta-servicio__imagen" src="img/desparasitacion.jpg" alt="Desparasitación de mascota">
+          <div class="tarjeta-servicio__cuerpo">
+            <p class="tarjeta-servicio__categoria">Desparasitación</p>
+            <h3 class="tarjeta-servicio__nombre">Desparasitación interna mediana</h3>
+            <p class="tarjeta-servicio__precio">$9.500</p>
+          </div>
+          <div class="tarjeta-servicio__acciones">
+            <a class="boton boton--secundario" href="detalle-producto.html?codigo=DE002">Ver detalle</a>
+          </div>
+        </li>
+      </ul>
+    </section>
+
+    <section id="video-clinica">
+      <h2 class="seccion__titulo">Conoce nuestras instalaciones</h2>
+      <p class="seccion__intro">
+        Un recorrido breve por el box de atención y el pabellón quirúrgico
+        de Veterinaria San Marcos.
+      </p>
+      <iframe
+        width="100%"
+        height="360"
+        src="https://www.youtube.com/embed/dQw4w9WgXcQ" 
+        title="Recorrido por Veterinaria San Marcos"
+        style="border:0; border-radius:10px;"
+        allowfullscreen>
+      </iframe>
+    </section>
+
+  </main>
+
+  <footer class="pie">
+    <div class="pie__contenido">
+      <div>
+        <strong>Veterinaria San Marcos</strong>
+        <p>Av. Libertador Bernardo O'Higgins 1234, Rancagua</p>
+      </div>
+      <div>
+        <p>Tel: +56 9 1234 5678</p>
+        <p>contacto@veterinariasanmarcos.cl</p>
+      </div>
+      <nav aria-label="Enlaces del pie de página">
+        <a href="nosotros.html">Nosotros</a> ·
+        <a href="contacto.html">Contacto</a>
+      </nav>
+    </div>
+  </footer>
+
+</body>
+</html>

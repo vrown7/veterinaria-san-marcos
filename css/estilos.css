@@ -1,0 +1,371 @@
+:root {
+  --verde-clinica: #3b6b54;
+  --verde-oscuro: #274a3a;
+  --verde-claro: #e7efe8;
+  --arena: #f6f3ec;
+  --texto: #24302b;
+  --texto-suave: #55625b;
+  --acento: #b8834b;
+  --borde: #d8d2c4;
+  --error: #a3242f;
+  --error-fondo: #fbe9ea;
+
+  --fuente-titulo: Georgia, "Iowan Old Style", serif;
+  --fuente-base: "Segoe UI", system-ui, sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: var(--fuente-base);
+  color: var(--texto);
+  background-color: var(--arena);
+  line-height: 1.5;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+/* ---------- Encabezado y navegación ---------- */
+
+.encabezado {
+  background-color: var(--verde-oscuro);
+  color: #fff;
+  padding: 0.75rem 1.5rem;
+}
+
+.encabezado__contenido {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.encabezado__marca {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  text-decoration: none;
+  color: #fff;
+}
+
+.encabezado__logo {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+}
+
+.encabezado__nombre {
+  font-family: var(--fuente-titulo);
+  font-size: 1.25rem;
+}
+
+.navegacion__lista {
+  display: flex;
+  gap: 1.25rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  flex-wrap: wrap;
+}
+
+.navegacion__lista a {
+  color: #fff;
+  text-decoration: none;
+  padding-bottom: 2px;
+  border-bottom: 2px solid transparent;
+}
+
+.navegacion__lista a:hover,
+.navegacion__lista a.activo {
+  border-bottom-color: var(--acento);
+}
+
+.navegacion__carrito {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  color: #fff;
+  text-decoration: none;
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  border-radius: 6px;
+  padding: 0.3rem 0.7rem;
+}
+
+/* ---------- Layout general ---------- */
+
+main {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 2rem 1.5rem 3rem;
+}
+
+section + section {
+  margin-top: 3rem;
+}
+
+.seccion__titulo {
+  font-family: var(--fuente-titulo);
+  font-size: 1.6rem;
+  margin-bottom: 0.4rem;
+}
+
+.seccion__intro {
+  color: var(--texto-suave);
+  max-width: 60ch;
+}
+
+/* ---------- Home ---------- */
+
+.hero {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 2rem;
+  align-items: center;
+  background-color: var(--verde-claro);
+  border-radius: 12px;
+  padding: 2.5rem;
+}
+
+.hero__titulo {
+  font-family: var(--fuente-titulo);
+  font-size: 2.2rem;
+  margin: 0 0 0.75rem;
+  color: var(--verde-oscuro);
+}
+
+.hero__texto {
+  color: var(--texto-suave);
+  margin-bottom: 1.5rem;
+  max-width: 45ch;
+}
+
+.hero__imagen {
+  border-radius: 10px;
+}
+
+/* ---------- Botones ---------- */
+
+.boton {
+  display: inline-block;
+  background-color: var(--verde-clinica);
+  color: #fff;
+  padding: 0.65rem 1.4rem;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: 600;
+  border: none;
+  cursor: pointer;
+}
+
+.boton:hover {
+  background-color: var(--verde-oscuro);
+}
+
+.boton--secundario {
+  background-color: transparent;
+  color: var(--verde-clinica);
+  border: 1px solid var(--verde-clinica);
+}
+
+.boton--secundario:hover {
+  background-color: var(--verde-claro);
+}
+
+/* ---------- Grilla de servicios ---------- */
+
+.grilla-servicios {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
+  gap: 1.5rem;
+  margin-top: 1.5rem;
+  list-style: none;
+  padding: 0;
+}
+
+.tarjeta-servicio {
+  background-color: #fff;
+  border: 1px solid var(--borde);
+  border-radius: 10px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.tarjeta-servicio__imagen {
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  background-color: var(--verde-claro);
+}
+
+.tarjeta-servicio__cuerpo {
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  flex: 1;
+}
+
+.tarjeta-servicio__categoria {
+  font-size: 0.8rem;
+  color: var(--acento);
+  font-weight: 600;
+}
+
+.tarjeta-servicio__nombre {
+  font-size: 1.05rem;
+  margin: 0;
+}
+
+.tarjeta-servicio__precio {
+  font-weight: 700;
+  margin-top: auto;
+}
+
+.tarjeta-servicio__acciones {
+  display: flex;
+  gap: 0.6rem;
+  padding: 0 1rem 1rem;
+}
+
+/* ---------- Detalle de servicio ---------- */
+
+.detalle-servicio {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2.5rem;
+  align-items: start;
+}
+
+.detalle-servicio__imagen {
+  border-radius: 10px;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  background-color: var(--verde-claro);
+}
+
+.detalle-servicio__precio {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--verde-oscuro);
+}
+
+.detalle-servicio__ficha {
+  list-style: none;
+  padding: 0;
+  margin: 1rem 0 1.5rem;
+  border-top: 1px solid var(--borde);
+}
+
+.detalle-servicio__ficha li {
+  display: flex;
+  justify-content: space-between;
+  padding: 0.5rem 0;
+  border-bottom: 1px solid var(--borde);
+}
+
+/* ---------- Página "Nosotros" ---------- */
+
+.equipo-clinica {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 1.25rem;
+  list-style: none;
+  padding: 0;
+}
+
+.integrante {
+  text-align: center;
+}
+
+.integrante__foto {
+  border-radius: 50%;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  margin: 0 auto 0.6rem;
+}
+
+.integrante__cargo {
+  color: var(--texto-suave);
+  font-size: 0.9rem;
+}
+
+.categorias-servicio {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  gap: 1rem;
+  list-style: none;
+  padding: 0;
+}
+
+.categorias-servicio li {
+  background-color: var(--verde-claro);
+  border-radius: 8px;
+  padding: 0.9rem 1rem;
+}
+
+/* ---------- Estado de error en formularios ---------- */
+
+.campo-error {
+  border-color: var(--error) !important;
+  background-color: var(--error-fondo);
+}
+
+.mensaje-error {
+  color: var(--error);
+  font-size: 0.85rem;
+  margin-top: 0.25rem;
+}
+
+/* ---------- Pie de página ---------- */
+
+.pie {
+  background-color: var(--verde-oscuro);
+  color: #fff;
+  padding: 2rem 1.5rem;
+}
+
+.pie__contenido {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.pie a {
+  color: #fff;
+}
+
+/* ---------- Responsive ---------- */
+
+@media (max-width: 768px) {
+  .hero,
+  .detalle-servicio {
+    grid-template-columns: 1fr;
+  }
+
+  .navegacion__lista {
+    gap: 0.75rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .encabezado__contenido {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .grilla-servicios {
+    grid-template-columns: 1fr;
+  }
+}

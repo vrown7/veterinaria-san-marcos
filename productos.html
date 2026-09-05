@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Servicios — Veterinaria San Marcos</title>
+  <link rel="stylesheet" href="css/estilos.css">
+  <script src="js/servicios.js" defer></script>
+</head>
+<body>
+
+  <header class="encabezado">
+    <div class="encabezado__contenido">
+      <a class="encabezado__marca" href="index.html">
+        <img class="encabezado__logo" src="img/logo.jpg" alt="Logo Veterinaria San Marcos">
+        <span class="encabezado__nombre">Veterinaria San Marcos</span>
+      </a>
+
+      <nav aria-label="Navegación principal">
+        <ul class="navegacion__lista">
+          <li><a href="index.html">Inicio</a></li>
+          <li><a href="productos.html" class="activo">Servicios</a></li>
+          <li><a href="nosotros.html">Nosotros</a></li>
+          <li><a href="blogs.html">Blog</a></li>
+          <li><a href="contacto.html">Contacto</a></li>
+          <li><a href="login.html">Iniciar sesión</a></li>
+        </ul>
+      </nav>
+
+      <a class="navegacion__carrito" href="carrito.html">
+        Carrito (<span id="contador-carrito">0</span>)
+      </a>
+    </div>
+  </header>
+
+  <main>
+
+    <section id="catalogo">
+      <h1 class="seccion__titulo">Catálogo de servicios</h1>
+      <p class="seccion__intro">
+        Estos son los servicios que puedes solicitar en línea. Haz clic en
+        cualquiera para ver el detalle completo, o agrégalo directamente
+        a tu carrito de solicitud.
+      </p>
+
+      <ul id="grilla-servicios" class="grilla-servicios"></ul>
+    </section>
+
+  </main>
+
+  <footer class="pie">
+    <div class="pie__contenido">
+      <div>
+        <strong>Veterinaria San Marcos</strong>
+        <p>Av. Libertador Bernardo O'Higgins 1234, Rancagua</p>
+      </div>
+      <div>
+        <p>Tel: +56 9 1234 5678</p>
+        <p>contacto@veterinariasanmarcos.cl</p>
+      </div>
+      <nav aria-label="Enlaces del pie de página">
+        <a href="nosotros.html">Nosotros</a> ·
+        <a href="contacto.html">Contacto</a>
+      </nav>
+    </div>
+  </footer>
+
+</body>
+</html>
