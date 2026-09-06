@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Editar usuario — Panel administrador</title>
+  <link rel="stylesheet" href="../css/estilos.css">
+  <link rel="stylesheet" href="../css/admin.css">
+  <script src="../js/admin.js" defer></script>
+</head>
+<body>
+
+  <div class="admin-layout">
+
+    <aside class="admin-menu" aria-label="Menú del panel administrador">
+      <a class="admin-menu__marca" href="index.html">
+        <img class="admin-menu__logo" src="../img/logo.jpg" alt="Logo Veterinaria San Marcos">
+        <span class="admin-menu__nombre">Panel Administrador</span>
+      </a>
+
+      <nav aria-label="Secciones del panel">
+        <ul class="admin-menu__lista">
+          <li><a href="index.html">Inicio</a></li>
+          <li><a href="productos.html">Servicios</a></li>
+          <li><a href="usuarios.html" class="activo">Usuarios</a></li>
+        </ul>
+      </nav>
+
+      <a class="admin-menu__salir" href="../index.html">&larr; Volver al sitio público</a>
+    </aside>
+
+    <div class="admin-contenido">
+      <header class="admin-topbar">
+        <h1 class="admin-topbar__titulo">Editar usuario</h1>
+        <p class="admin-topbar__subtitulo">Actualiza los datos de la cuenta seleccionada.</p>
+      </header>
+
+      <main>
+        <section id="formulario-editar-usuario">
+          <p><a href="usuarios.html">&larr; Volver al listado de usuarios</a></p>
+
+          <div class="mensaje-exito" id="mensaje-formulario" role="status"></div>
+
+          <form class="formulario-admin" id="formulario-usuario" novalidate>
+
+            <div class="campo">
+              <label for="run">RUN (sin puntos ni guion)</label>
+              <input type="text" id="run" name="run" placeholder="Ej: 198734562" autocomplete="off">
+              <p class="mensaje-error" id="error-run"></p>
+            </div>
+
+            <div class="formulario-admin__grupo">
+              <div class="campo">
+                <label for="nombre">Nombre</label>
+                <input type="text" id="nombre" name="nombre" maxlength="50">
+                <p class="mensaje-error" id="error-nombre"></p>
+              </div>
+
+              <div class="campo">
+                <label for="apellidos">Apellidos</label>
+                <input type="text" id="apellidos" name="apellidos" maxlength="100">
+                <p class="mensaje-error" id="error-apellidos"></p>
+              </div>
+
+              <div class="campo">
+                <label for="correo">Correo electrónico</label>
+                <input type="email" id="correo" name="correo" maxlength="100">
+                <p class="campo__ayuda">Dominios permitidos: @duoc.cl, @profesor.duoc.cl o @gmail.com.</p>
+                <p class="mensaje-error" id="error-correo"></p>
+              </div>
+
+              <div class="campo">
+                <label for="fecha-nacimiento">Fecha de nacimiento</label>
+                <input type="date" id="fecha-nacimiento" name="fecha-nacimiento">
+                <p class="campo__ayuda">Opcional.</p>
+                <p class="mensaje-error" id="error-fecha-nacimiento"></p>
+              </div>
+
+              <div class="campo">
+                <label for="tipo-usuario">Tipo de usuario</label>
+                <select id="tipo-usuario" name="tipo-usuario">
+                  <option value="">Seleccione un tipo</option>
+                  <option value="Administrador">Administrador</option>
+                  <option value="Recepcionista">Recepcionista</option>
+                  <option value="Dueño de mascota">Dueño de mascota</option>
+                </select>
+                <p class="mensaje-error" id="error-tipo-usuario"></p>
+              </div>
+
+              <div class="campo">
+                <label for="region">Región</label>
+                <select id="region" name="region">
+                  <option value="">Seleccione una región</option>
+                </select>
+                <p class="mensaje-error" id="error-region"></p>
+              </div>
+
+              <div class="campo">
+                <label for="comuna">Comuna</label>
+                <select id="comuna" name="comuna" disabled>
+                  <option value="">Seleccione primero una región</option>
+                </select>
+                <p class="mensaje-error" id="error-comuna"></p>
+              </div>
+            </div>
+
+            <div class="campo">
+              <label for="direccion">Dirección</label>
+              <input type="text" id="direccion" name="direccion" maxlength="300">
+              <p class="mensaje-error" id="error-direccion"></p>
+            </div>
+
+            <div class="formulario-admin__acciones">
+              <button class="boton" type="submit">Guardar cambios</button>
+              <a class="boton boton--secundario" href="usuarios.html">Cancelar</a>
+            </div>
+
+          </form>
+        </section>
+      </main>
+
+      <footer class="pie">
+        <div class="pie__contenido">
+          <div>
+            <strong>Veterinaria San Marcos</strong>
+            <p>Panel administrador — uso interno</p>
+          </div>
+          <nav aria-label="Enlaces del pie de página">
+            <a href="../index.html">Sitio público</a>
+          </nav>
+        </div>
+      </footer>
+    </div>
+
+  </div>
+
+</body>
+</html>

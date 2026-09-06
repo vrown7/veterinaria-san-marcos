@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Servicios — Panel administrador</title>
+  <link rel="stylesheet" href="../css/estilos.css">
+  <link rel="stylesheet" href="../css/admin.css">
+  <script src="../js/admin.js" defer></script>
+</head>
+<body>
+
+  <div class="admin-layout">
+
+    <aside class="admin-menu" aria-label="Menú del panel administrador">
+      <a class="admin-menu__marca" href="index.html">
+        <img class="admin-menu__logo" src="../img/logo.jpg" alt="Logo Veterinaria San Marcos">
+        <span class="admin-menu__nombre">Panel Administrador</span>
+      </a>
+
+      <nav aria-label="Secciones del panel">
+        <ul class="admin-menu__lista">
+          <li><a href="index.html">Inicio</a></li>
+          <li><a href="productos.html" class="activo">Servicios</a></li>
+          <li><a href="usuarios.html">Usuarios</a></li>
+        </ul>
+      </nav>
+
+      <a class="admin-menu__salir" href="../index.html">&larr; Volver al sitio público</a>
+    </aside>
+
+    <div class="admin-contenido">
+      <header class="admin-topbar">
+        <h1 class="admin-topbar__titulo">Gestión de servicios veterinarios</h1>
+        <p class="admin-topbar__subtitulo">Administra el catálogo que se muestra en el sitio público.</p>
+      </header>
+
+      <main>
+        <section id="listado-servicios">
+          <div class="admin-seccion__cabecera">
+            <p class="seccion__intro">
+              Los servicios marcados como <strong>stock crítico</strong> requieren
+              reposición o revisión de disponibilidad.
+            </p>
+            <a class="boton" href="producto-nuevo.html">Nuevo servicio</a>
+          </div>
+
+          <div class="admin-tabla-envoltorio">
+            <table class="admin-tabla">
+              <caption>Listado de servicios registrados</caption>
+              <thead>
+                <tr>
+                  <th scope="col">Código</th>
+                  <th scope="col">Nombre</th>
+                  <th scope="col">Categoría</th>
+                  <th scope="col">Precio</th>
+                  <th scope="col">Stock</th>
+                  <th scope="col">Estado</th>
+                  <th scope="col">Acciones</th>
+                </tr>
+              </thead>
+              <tbody id="cuerpo-tabla-servicios"></tbody>
+            </table>
+          </div>
+        </section>
+      </main>
+
+      <footer class="pie">
+        <div class="pie__contenido">
+          <div>
+            <strong>Veterinaria San Marcos</strong>
+            <p>Panel administrador — uso interno</p>
+          </div>
+          <nav aria-label="Enlaces del pie de página">
+            <a href="../index.html">Sitio público</a>
+          </nav>
+        </div>
+      </footer>
+    </div>
+
+  </div>
+
+</body>
+</html>
