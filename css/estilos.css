@@ -1,3 +1,9 @@
+/* ============================================
+   Veterinaria San Marcos — hoja de estilos externa
+   Un solo archivo, enlazado desde todas las páginas
+   del sitio (requisito de mantenibilidad, punto 1.d).
+   ============================================ */
+
 :root {
   --verde-clinica: #3b6b54;
   --verde-oscuro: #274a3a;
@@ -123,7 +129,7 @@ section + section {
   max-width: 60ch;
 }
 
-/* ---------- Home ---------- */
+/* ---------- Hero de portada (Home) ---------- */
 
 .hero {
   display: grid;
@@ -180,7 +186,7 @@ section + section {
   background-color: var(--verde-claro);
 }
 
-/* ---------- Grilla de servicios ---------- */
+/* ---------- Grilla de servicios (tarjetas) ---------- */
 
 .grilla-servicios {
   display: grid;
@@ -312,7 +318,66 @@ section + section {
   padding: 0.9rem 1rem;
 }
 
-/* ---------- Estado de error en formularios ---------- */
+/* ---------- Formularios (registro, login, contacto) ---------- */
+
+.formulario {
+  display: flex;
+  flex-direction: column;
+  gap: 1.1rem;
+  max-width: 480px;
+  margin-top: 1.5rem;
+}
+
+.campo {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.campo label {
+  font-weight: 600;
+}
+
+.campo input,
+.campo select,
+.campo textarea {
+  padding: 0.55rem 0.7rem;
+  border: 1px solid var(--borde);
+  border-radius: 6px;
+  font-family: inherit;
+  font-size: 1rem;
+  background-color: #fff;
+}
+
+.campo textarea {
+  resize: vertical;
+}
+
+.campo-ayuda {
+  font-size: 0.8rem;
+  color: var(--texto-suave);
+}
+
+.formulario__acciones {
+  display: flex;
+  gap: 0.75rem;
+  align-items: center;
+}
+
+.formulario__pie {
+  font-size: 0.9rem;
+  color: var(--texto-suave);
+}
+
+.visualmente-oculto {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+}
+
+/* ---------- Estado de error / éxito en formularios ---------- */
 
 .campo-error {
   border-color: var(--error) !important;
@@ -323,6 +388,88 @@ section + section {
   color: var(--error);
   font-size: 0.85rem;
   margin-top: 0.25rem;
+  display: block;
+  min-height: 1.1em;
+}
+
+.mensaje-exito {
+  color: var(--verde-oscuro);
+  font-weight: 600;
+}
+
+/* ---------- Blog ---------- */
+
+.grilla-blogs {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 1.5rem;
+  margin-top: 1.5rem;
+  list-style: none;
+  padding: 0;
+}
+
+.tarjeta-blog {
+  background-color: #fff;
+  border: 1px solid var(--borde);
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.tarjeta-blog__imagen {
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+}
+
+.tarjeta-blog article {
+  padding: 1rem;
+}
+
+.tarjeta-blog__categoria {
+  font-size: 0.8rem;
+  color: var(--acento);
+  font-weight: 600;
+  margin: 0 0 0.3rem;
+}
+
+.tarjeta-blog__titulo {
+  font-size: 1.1rem;
+  margin: 0 0 0.5rem;
+}
+
+.tarjeta-blog__titulo a {
+  color: var(--texto);
+  text-decoration: none;
+}
+
+.articulo-blog {
+  max-width: 70ch;
+}
+
+.articulo-blog__imagen {
+  border-radius: 10px;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  margin-bottom: 1rem;
+}
+
+/* ---------- Tabla del carrito ---------- */
+
+.tabla-carrito {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 1.5rem;
+}
+
+.tabla-carrito th,
+.tabla-carrito td {
+  text-align: left;
+  padding: 0.7rem;
+  border-bottom: 1px solid var(--borde);
+}
+
+.carrito-total {
+  margin-top: 1rem;
+  font-size: 1.2rem;
 }
 
 /* ---------- Pie de página ---------- */
@@ -346,7 +493,7 @@ section + section {
   color: #fff;
 }
 
-/* ---------- Responsive ---------- */
+/* ---------- Responsive: tablet y celular ---------- */
 
 @media (max-width: 768px) {
   .hero,
