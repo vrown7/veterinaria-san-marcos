@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Crear cuenta — Veterinaria San Marcos</title>
+  <link rel="stylesheet" href="css/estilos.css">
+  <script src="js/servicios.js" defer></script>
+  <script src="js/cuentas.js" defer></script>
+</head>
+<body>
+
+  <header class="encabezado">
+    <div class="encabezado__contenido">
+      <a class="encabezado__marca" href="index.html">
+        <img class="encabezado__logo" src="img/logo.jpg" alt="Logo Veterinaria San Marcos">
+        <span class="encabezado__nombre">Veterinaria San Marcos</span>
+      </a>
+
+      <nav aria-label="Navegación principal">
+        <ul class="navegacion__lista">
+          <li><a href="index.html">Inicio</a></li>
+          <li><a href="productos.html">Servicios</a></li>
+          <li><a href="nosotros.html">Nosotros</a></li>
+          <li><a href="blogs.html">Blog</a></li>
+          <li><a href="contacto.html">Contacto</a></li>
+          <li><a href="login.html">Iniciar sesión</a></li>
+        </ul>
+      </nav>
+
+      <a class="navegacion__carrito" href="carrito.html">
+        Carrito (<span id="contador-carrito">0</span>)
+      </a>
+    </div>
+  </header>
+
+  <main>
+    <section id="registro">
+      <h1 class="seccion__titulo">Crea tu cuenta</h1>
+      <p class="seccion__intro">
+        Regístrate para agendar horas, revisar el historial de tus solicitudes
+        y recibir recordatorios de vacunas y controles de tu mascota.
+      </p>
+
+      <form id="formulario-registro" class="formulario" novalidate>
+
+        <div class="campo">
+          <label for="run">RUN</label>
+          <input type="text" id="run" name="run" maxlength="9" placeholder="19011022K" autocomplete="off">
+          <span class="mensaje-error" id="error-run"></span>
+        </div>
+
+        <div class="campo">
+          <label for="nombre">Nombre</label>
+          <input type="text" id="nombre" name="nombre" maxlength="50" autocomplete="given-name">
+          <span class="mensaje-error" id="error-nombre"></span>
+        </div>
+
+        <div class="campo">
+          <label for="apellidos">Apellidos</label>
+          <input type="text" id="apellidos" name="apellidos" maxlength="100" autocomplete="family-name">
+          <span class="mensaje-error" id="error-apellidos"></span>
+        </div>
+
+        <div class="campo">
+          <label for="correo-registro">Correo electrónico</label>
+          <input type="text" id="correo-registro" name="correo" maxlength="100" autocomplete="email">
+          <span class="campo-ayuda">Dominios permitidos: @duoc.cl, @profesor.duoc.cl o @gmail.com</span>
+          <span class="mensaje-error" id="error-correo-registro"></span>
+        </div>
+
+        <div class="campo">
+          <label for="clave">Contraseña</label>
+          <input type="password" id="clave" name="clave" maxlength="10" autocomplete="new-password">
+          <span class="mensaje-error" id="error-clave"></span>
+        </div>
+
+        <div class="campo">
+          <label for="clave-confirmar">Confirmar contraseña</label>
+          <input type="password" id="clave-confirmar" name="claveConfirmar" maxlength="10" autocomplete="new-password">
+          <span class="mensaje-error" id="error-clave-confirmar"></span>
+        </div>
+
+        <div class="campo">
+          <label for="telefono">Teléfono <span class="campo-ayuda">(opcional)</span></label>
+          <input type="text" id="telefono" name="telefono" maxlength="15" autocomplete="tel" placeholder="+56 9 1234 5678">
+          <span class="mensaje-error" id="error-telefono"></span>
+        </div>
+
+        <div class="campo">
+          <label for="region">Región</label>
+          <select id="region" name="region">
+            <option value="">Selecciona tu región</option>
+          </select>
+          <span class="mensaje-error" id="error-region"></span>
+        </div>
+
+        <div class="campo">
+          <label for="comuna">Comuna</label>
+          <select id="comuna" name="comuna" disabled>
+            <option value="">Selecciona primero tu región</option>
+          </select>
+          <span class="mensaje-error" id="error-comuna"></span>
+        </div>
+
+        <p class="mensaje-exito" id="mensaje-registro-exito" role="status"></p>
+
+        <div class="formulario__acciones">
+          <button type="submit" class="boton">Crear cuenta</button>
+        </div>
+
+        <p class="formulario__pie">
+          ¿Ya tienes cuenta? <a href="login.html">Inicia sesión</a>
+        </p>
+      </form>
+    </section>
+  </main>
+
+  <footer class="pie">
+    <div class="pie__contenido">
+      <div>
+        <strong>Veterinaria San Marcos</strong>
+        <p>Av. Libertador Bernardo O'Higgins 1234, Rancagua</p>
+      </div>
+      <div>
+        <p>Tel: +56 9 1234 5678</p>
+        <p>contacto@veterinariasanmarcos.cl</p>
+      </div>
+      <nav aria-label="Enlaces del pie de página">
+        <a href="nosotros.html">Nosotros</a> ·
+        <a href="contacto.html">Contacto</a>
+      </nav>
+    </div>
+  </footer>
+
+</body>
+</html>

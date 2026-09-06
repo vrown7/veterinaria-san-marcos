@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Blog — Veterinaria San Marcos</title>
+  <link rel="stylesheet" href="css/estilos.css">
+  <script src="js/servicios.js" defer></script>
+  <script src="js/cuentas.js" defer></script>
+</head>
+<body>
+
+  <header class="encabezado">
+    <div class="encabezado__contenido">
+      <a class="encabezado__marca" href="index.html">
+        <img class="encabezado__logo" src="img/logo.jpg" alt="Logo Veterinaria San Marcos">
+        <span class="encabezado__nombre">Veterinaria San Marcos</span>
+      </a>
+
+      <nav aria-label="Navegación principal">
+        <ul class="navegacion__lista">
+          <li><a href="index.html">Inicio</a></li>
+          <li><a href="productos.html">Servicios</a></li>
+          <li><a href="nosotros.html">Nosotros</a></li>
+          <li><a href="blogs.html" class="activo">Blog</a></li>
+          <li><a href="contacto.html">Contacto</a></li>
+          <li><a href="login.html">Iniciar sesión</a></li>
+        </ul>
+      </nav>
+
+      <a class="navegacion__carrito" href="carrito.html">
+        Carrito (<span id="contador-carrito">0</span>)
+      </a>
+    </div>
+  </header>
+
+  <main>
+    <section id="blog">
+      <h1 class="seccion__titulo">Blog de Veterinaria San Marcos</h1>
+      <p class="seccion__intro">
+        Consejos y recomendaciones de nuestro equipo veterinario para el
+        cuidado diario de tu mascota.
+      </p>
+
+      <ul class="grilla-blogs">
+        <li class="tarjeta-blog">
+          <article>
+            <img class="tarjeta-blog__imagen" src="img/vacuna-antirrabica.jpg" alt="Aplicación de vacuna a una mascota en la clínica">
+            <p class="tarjeta-blog__categoria">Vacunación</p>
+            <h2 class="tarjeta-blog__titulo">
+              <a href="blog-detalle-1.html">Calendario de vacunas para cachorros y gatitos</a>
+            </h2>
+            <p>
+              Qué vacunas necesita tu mascota en sus primeros meses de vida
+              y por qué es importante respetar los plazos entre dosis.
+            </p>
+            <a class="boton boton--secundario" href="blog-detalle-1.html">Leer más</a>
+          </article>
+        </li>
+
+        <li class="tarjeta-blog">
+          <article>
+            <img class="tarjeta-blog__imagen" src="img/cirugia-canina.jpg" alt="Perro en recuperación tras una cirugía en la clínica">
+            <p class="tarjeta-blog__categoria">Cirugía</p>
+            <h2 class="tarjeta-blog__titulo">
+              <a href="blog-detalle-2.html">Cuidados postoperatorios: cómo ayudar a tu mascota a recuperarse en casa</a>
+            </h2>
+            <p>
+              Recomendaciones prácticas para la recuperación después de una
+              cirugía, desde el reposo hasta el uso del collar isabelino.
+            </p>
+            <a class="boton boton--secundario" href="blog-detalle-2.html">Leer más</a>
+          </article>
+        </li>
+      </ul>
+    </section>
+  </main>
+
+  <footer class="pie">
+    <div class="pie__contenido">
+      <div>
+        <strong>Veterinaria San Marcos</strong>
+        <p>Av. Libertador Bernardo O'Higgins 1234, Rancagua</p>
+      </div>
+      <div>
+        <p>Tel: +56 9 1234 5678</p>
+        <p>contacto@veterinariasanmarcos.cl</p>
+      </div>
+      <nav aria-label="Enlaces del pie de página">
+        <a href="nosotros.html">Nosotros</a> ·
+        <a href="contacto.html">Contacto</a>
+      </nav>
+    </div>
+  </footer>
+
+</body>
+</html>
