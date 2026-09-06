@@ -89,7 +89,7 @@ const servicios = [
   },
 ];
 
-// Formateador de precios.
+// Formateador de precios en pesos chilenos.
 function formatearPrecio(valor) {
   return valor.toLocaleString('es-CL', {
     style: 'currency',
@@ -127,14 +127,13 @@ function crearTarjetaServicio(servicio) {
 
 function renderizarCatalogo() {
   const contenedor = document.querySelector('#grilla-servicios');
-  if (!contenedor) return; 
+  if (!contenedor) return;
 
   servicios.forEach((servicio) => {
     contenedor.appendChild(crearTarjetaServicio(servicio));
   });
 
-  // Un solo listener en el contenedor (delegación de eventos),
-  // en vez de uno por cada botón "Añadir".
+
   contenedor.addEventListener('click', (evento) => {
     const boton = evento.target.closest('button[data-codigo]');
     if (!boton) return;
@@ -146,7 +145,7 @@ function renderizarCatalogo() {
 
 function renderizarDetalle() {
   const contenedor = document.querySelector('#detalle-servicio');
-  if (!contenedor) return; 
+  if (!contenedor) return;
 
   const parametros = new URLSearchParams(window.location.search);
   const codigo = parametros.get('codigo');
@@ -197,7 +196,98 @@ function actualizarContadorCarrito() {
   contador.textContent = carrito.length;
 }
 
+function quitarDelCarrito(codigo) {
+  const carrito = JSON.parse(localStorage.getItem('carrito')) || [];
+  const posicion = carrito.indexOf(codigo);
+  if (posicion !== -1) carrito.splice(posicion, 1);
+
+  localStorage.setItem('carrito', JSON.stringify(carrito));
+  actualizarContadorCarrito();
+  renderizarCarrito();
+}
+
+
+function contarServiciosPorCodigo(carrito) {
+  const conteo = {};
+  carrito.forEach((codigo) => {
+    conteo[codigo] = (conteo[codigo] || 0) + 1;
+  });
+  return conteo;
+}
+
+// ---------- Carrito (carrito.html) ----------
+
+function renderizarCarrito() {
+  const tabla = document.querySelector('#carrito-items');
+  if (!tabla) return;
+
+  const totalEl = document.querySelector('#carrito-total');
+  const vacioEl = document.querySelector('#carrito-vacio');
+
+  const carrito = JSON.parse(localStorage.getItem('carrito')) || [];
+  const conteo = contarServiciosPorCodigo(carrito);
+  const codigosUnicos = Object.keys(conteo);
+
+  tabla.innerHTML = '';
+
+  if (codigosUnicos.length === 0) {
+    vacioEl.hidden = false;
+    totalEl.textContent = formatearPrecio(0);
+    return;
+  }
+
+  vacioEl.hidden = true;
+  let total = 0;
+
+  codigosUnicos.forEach((codigo) => {
+    const servicio = buscarServicioPorCodigo(codigo);
+    if (!servicio) return;
+
+    const cantidad = conteo[codigo];
+    const subtotal = servicio.precio * cantidad;
+    total += subtotal;
+
+    const fila = document.createElement('tr');
+    fila.innerHTML = `
+      <td>${servicio.nombre}</td>
+      <td>${formatearPrecio(servicio.precio)}</td>
+      <td>${cantidad}</td>
+      <td>${formatearPrecio(subtotal)}</td>
+      <td><button type="button" class="boton boton--secundario" data-quitar="${codigo}">Quitar</button></td>
+    `;
+    tabla.appendChild(fila);
+  });
+
+  totalEl.textContent = formatearPrecio(total);
+
+
+  tabla.addEventListener('click', (evento) => {
+    const boton = evento.target.closest('button[data-quitar]');
+    if (!boton) return;
+    quitarDelCarrito(boton.dataset.quitar);
+  });
+}
+
+function inicializarConfirmarCarrito() {
+  const boton = document.querySelector('#confirmar-solicitud');
+  if (!boton) return;
+
+  boton.addEventListener('click', () => {
+    localStorage.removeItem('carrito');
+    actualizarContadorCarrito();
+    renderizarCarrito();
+
+    const mensaje = document.querySelector('#carrito-mensaje-exito');
+    if (mensaje) {
+      mensaje.textContent =
+        '¡Tu solicitud fue enviada! Nos pondremos en contacto para confirmar la hora.';
+    }
+  });
+}
+
 
 actualizarContadorCarrito();
 renderizarCatalogo();
 renderizarDetalle();
+renderizarCarrito();
+inicializarConfirmarCarrito();
