@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mi carrito — Veterinaria San Marcos</title>
+  <link rel="stylesheet" href="css/estilos.css">
+  <script src="js/servicios.js" defer></script>
+</head>
+<body>
+
+  <header class="encabezado">
+    <div class="encabezado__contenido">
+      <a class="encabezado__marca" href="index.html">
+        <img class="encabezado__logo" src="img/logo.jpg" alt="Logo Veterinaria San Marcos">
+        <span class="encabezado__nombre">Veterinaria San Marcos</span>
+      </a>
+
+      <nav aria-label="Navegación principal">
+        <ul class="navegacion__lista">
+          <li><a href="index.html">Inicio</a></li>
+          <li><a href="productos.html">Servicios</a></li>
+          <li><a href="nosotros.html">Nosotros</a></li>
+          <li><a href="blogs.html">Blog</a></li>
+          <li><a href="contacto.html">Contacto</a></li>
+          <li><a href="login.html">Iniciar sesión</a></li>
+        </ul>
+      </nav>
+
+      <a class="navegacion__carrito" href="carrito.html">
+        Carrito (<span id="contador-carrito">0</span>)
+      </a>
+    </div>
+  </header>
+
+  <main>
+    <section id="carrito">
+      <h1 class="seccion__titulo">Mi carrito de solicitud</h1>
+      <p class="seccion__intro">
+        Estos son los servicios que agregaste. Al confirmar, nuestro
+        equipo se pondrá en contacto para coordinar la hora de atención
+        (no se realiza ningún cobro en línea en esta etapa).
+      </p>
+
+      <p id="carrito-vacio" hidden>
+        Aún no has agregado servicios.
+        <a href="productos.html">Ver catálogo de servicios</a>.
+      </p>
+
+      <table class="tabla-carrito">
+        <thead>
+          <tr>
+            <th scope="col">Servicio</th>
+            <th scope="col">Precio unitario</th>
+            <th scope="col">Cantidad</th>
+            <th scope="col">Subtotal</th>
+            <th scope="col"><span class="visualmente-oculto">Acciones</span></th>
+          </tr>
+        </thead>
+        <tbody id="carrito-items"></tbody>
+      </table>
+
+      <p class="carrito-total">
+        Total: <strong id="carrito-total">$0</strong>
+      </p>
+
+      <p class="mensaje-exito" id="carrito-mensaje-exito" role="status"></p>
+
+      <div class="formulario__acciones">
+        <button type="button" class="boton" id="confirmar-solicitud">Confirmar solicitud</button>
+        <a class="boton boton--secundario" href="productos.html">Seguir viendo servicios</a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="pie">
+    <div class="pie__contenido">
+      <div>
+        <strong>Veterinaria San Marcos</strong>
+        <p>Av. Libertador Bernardo O'Higgins 1234, Rancagua</p>
+      </div>
+      <div>
+        <p>Tel: +56 9 1234 5678</p>
+        <p>contacto@veterinariasanmarcos.cl</p>
+      </div>
+      <nav aria-label="Enlaces del pie de página">
+        <a href="nosotros.html">Nosotros</a> ·
+        <a href="contacto.html">Contacto</a>
+      </nav>
+    </div>
+  </footer>
+
+</body>
+</html>
